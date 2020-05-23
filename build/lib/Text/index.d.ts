@@ -15,5 +15,4 @@ export interface TextProps {
     whiteSpace?: React.CSSProperties["whiteSpace"];
     textOverflow?: React.CSSProperties["textOverflow"];
 }
-declare const Text: import("styled-components").StyledComponent<"span", any, TextProps, never>;
-export default Text;
+export declare const Text: import("styled-components").StyledComponent<"span", any, TextProps, never>;

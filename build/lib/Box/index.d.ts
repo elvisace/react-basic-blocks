@@ -40,5 +40,4 @@ export interface BoxProps {
     boxShadow?: React.CSSProperties["boxShadow"];
     cursor?: React.CSSProperties["cursor"];
 }
-declare const Box: import("styled-components").StyledComponent<"div", any, BoxProps, never>;
-export default Box;
+export declare const Box: import("styled-components").StyledComponent<"div", any, BoxProps, never>;
