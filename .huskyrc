@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "rm -rf node_modules/@types/react-native && yarn format && yarn lint-fix && yarn build && git add ."
+  }
+}
