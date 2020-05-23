@@ -51,7 +51,7 @@
     "test-coverage": "jest --coverage",
     "view-coverage": "open coverage/index.html",
     "storybook": "start-storybook -p 3333",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "dependencies": {}
 }
