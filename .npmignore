@@ -1,0 +1,14 @@
+node_modules
+storybook-static
+coverage
+src
+yarn-error.log
+.DS_Store
+.env
+.storybook
+.vscode
+.eslintrc
+.huskyrc
+jest.config.jest
+tsconfig.json
+yarn.lock
