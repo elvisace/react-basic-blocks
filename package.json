@@ -1,6 +1,6 @@
 {
   "name": "react-basic-blocks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Basic Building Blocks for React",
   "main": "build/index.js",
   "private": false,

@@ -1,16 +1,15 @@
 import React, { FC, useEffect, useState, CSSProperties } from "react";
-import "./styles.css";
+import { ContainerWrapper } from "./styles";
 
 interface IContainerProps {
   id?: string;
-  fluid: boolean;
   className?: string;
 }
 
 export const Container: FC<IContainerProps> = ({ id, children, className }) => (
-  <div className={`container ${className}`} id={id}>
+  <ContainerWrapper className={className} id={id}>
     {children}
-  </div>
+  </ContainerWrapper>
 );
 
 interface IRowProps {
