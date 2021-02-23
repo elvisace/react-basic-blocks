@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState, CSSProperties } from "react";
+import * as React from "react";
+import { FC, useEffect, useState, CSSProperties } from "react";
 import { ContainerWrapper } from "./styles";
 
 interface IContainerProps {
@@ -51,11 +52,11 @@ interface IColProps {
   };
 }
 
-const getSizeClass = (colSize: string, size?: number) => {
+const getSizeClass = (colSize: string, size?: number): string => {
   return size !== undefined ? `col-${colSize}-${size}` : "";
 };
 
-const getOffsetClass = (colSize: string, offset?: number) => {
+const getOffsetClass = (colSize: string, offset?: number): string => {
   return offset !== undefined ? `col-${colSize}-offset-${offset}` : "";
 };
 
@@ -103,7 +104,7 @@ export const Visible: FC<IVisibleProps> = ({ children, ...props }) => {
 export const screenClasses = ["xs", "sm", "md", "lg"];
 export const breakpoints = [768, 1024, 1440];
 
-export const useScreenClass = () => {
+export const useScreenClass = (): string => {
   const getScreenClass = () => {
     let newScreenClass = "xs";
 

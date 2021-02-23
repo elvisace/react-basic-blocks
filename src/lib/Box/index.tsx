@@ -1,6 +1,7 @@
+import { CSSProperties } from "react";
 import styled from "styled-components";
 
-const convertProp = (prop?: string) => {
+const convertProp = (prop?: string): string => {
   return prop ? prop.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase() : "";
 };
 
@@ -24,30 +25,30 @@ export const boxShadows = {
 };
 
 export interface BoxProps {
-  alignSelf?: React.CSSProperties["alignSelf"];
-  margin?: React.CSSProperties["margin"];
-  alignItems?: React.CSSProperties["alignItems"];
-  alignContent?: React.CSSProperties["alignContent"];
-  flexBasis?: React.CSSProperties["flexBasis"];
-  border?: React.CSSProperties["border"];
-  borderTop?: React.CSSProperties["borderTop"];
-  borderRight?: React.CSSProperties["borderRight"];
-  borderBottom?: React.CSSProperties["borderBottom"];
-  borderLeft?: React.CSSProperties["borderLeft"];
-  flexDirection?: React.CSSProperties["flexDirection"];
-  flex?: React.CSSProperties["flex"];
-  flexWrap?: React.CSSProperties["flexWrap"];
-  height?: React.CSSProperties["height"];
-  width?: React.CSSProperties["width"];
-  justifyContent?: React.CSSProperties["justifyContent"];
-  padding?: React.CSSProperties["padding"];
-  backgroundColor?: React.CSSProperties["backgroundColor"];
-  borderRadius?: React.CSSProperties["borderRadius"];
-  boxShadow?: React.CSSProperties["boxShadow"];
-  cursor?: React.CSSProperties["cursor"];
+  alignSelf?: CSSProperties["alignSelf"];
+  margin?: CSSProperties["margin"];
+  alignItems?: CSSProperties["alignItems"];
+  alignContent?: CSSProperties["alignContent"];
+  flexBasis?: CSSProperties["flexBasis"];
+  border?: CSSProperties["border"];
+  borderTop?: CSSProperties["borderTop"];
+  borderRight?: CSSProperties["borderRight"];
+  borderBottom?: CSSProperties["borderBottom"];
+  borderLeft?: CSSProperties["borderLeft"];
+  flexDirection?: CSSProperties["flexDirection"];
+  flex?: CSSProperties["flex"];
+  flexWrap?: CSSProperties["flexWrap"];
+  height?: CSSProperties["height"];
+  width?: CSSProperties["width"];
+  justifyContent?: CSSProperties["justifyContent"];
+  padding?: CSSProperties["padding"];
+  backgroundColor?: CSSProperties["backgroundColor"];
+  borderRadius?: CSSProperties["borderRadius"];
+  boxShadow?: CSSProperties["boxShadow"];
+  cursor?: CSSProperties["cursor"];
 }
 
-const boxPropKeys = [
+const boxPropKeys = new Set([
   "alignSelf",
   "margin",
   "alignItems",
@@ -69,7 +70,7 @@ const boxPropKeys = [
   "borderRadius",
   "boxShadow",
   "cursor",
-];
+]);
 
 export const Box = styled.div<BoxProps>`
   display: flex;
@@ -77,6 +78,6 @@ export const Box = styled.div<BoxProps>`
     props.flexDirection === undefined ? "flex-direction: column;" : ""}
   ${(props: any) =>
     Object.keys(props)
-      .filter((x) => boxPropKeys.includes(x))
+      .filter((x) => boxPropKeys.has(x))
       .map((key) => `${convertProp(key)}: ${props[key]};`)}
 `;
