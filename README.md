@@ -2,15 +2,13 @@
 
 Basic Building Blocks for React.js. Includes Grid (Container, Row, Column), Box, and Text components.
 
-# STORYBOOK / DEMO
+## STORYBOOK / DEMO
 
 [https://elvisace.github.io/react-basic-blocks/](https://elvisace.github.io/react-basic-blocks/)
 
+## COMPONENTS
 
-
-# COMPONENTS
-
-## Grid 
+### Grid
 
 Css grid based on bootstrap that exposes the following components: `Container`, `Row`, `Column`. Example:
 
@@ -103,7 +101,7 @@ interface IColProps {
 }
 ```
 
-## Box
+### Box
 
 A flex div whose flex direction defaults to `column`. Takes in the following properties:
 
@@ -133,7 +131,7 @@ export interface BoxProps {
 }
 ```
 
-## Text
+### Text
 
 A span that takes in the following properties:
 

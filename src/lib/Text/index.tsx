@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import styled from "styled-components";
 
 const convertProp = (prop?: string) => {
@@ -5,23 +6,23 @@ const convertProp = (prop?: string) => {
 };
 
 export interface TextProps {
-  alignSelf?: React.CSSProperties["alignSelf"];
-  color?: React.CSSProperties["color"];
-  margin?: React.CSSProperties["margin"];
-  fontSize?: React.CSSProperties["fontSize"];
-  textAlign?: React.CSSProperties["textAlign"];
-  fontWeight?: React.CSSProperties["fontWeight"];
-  fontStretch?: React.CSSProperties["fontStretch"];
-  fontStyle?: React.CSSProperties["fontStyle"];
-  wordBreak?: React.CSSProperties["wordBreak"];
-  lineHeight?: React.CSSProperties["lineHeight"];
-  letterSpacing?: React.CSSProperties["letterSpacing"];
-  overflow?: React.CSSProperties["overflow"];
-  whiteSpace?: React.CSSProperties["whiteSpace"];
-  textOverflow?: React.CSSProperties["textOverflow"];
+  alignSelf?: CSSProperties["alignSelf"];
+  color?: CSSProperties["color"];
+  margin?: CSSProperties["margin"];
+  fontSize?: CSSProperties["fontSize"];
+  textAlign?: CSSProperties["textAlign"];
+  fontWeight?: CSSProperties["fontWeight"];
+  fontStretch?: CSSProperties["fontStretch"];
+  fontStyle?: CSSProperties["fontStyle"];
+  wordBreak?: CSSProperties["wordBreak"];
+  lineHeight?: CSSProperties["lineHeight"];
+  letterSpacing?: CSSProperties["letterSpacing"];
+  overflow?: CSSProperties["overflow"];
+  whiteSpace?: CSSProperties["whiteSpace"];
+  textOverflow?: CSSProperties["textOverflow"];
 }
 
-const textPropKeys = [
+const textPropKeys = new Set([
   "alignSelf",
   "color",
   "margin",
@@ -36,11 +37,11 @@ const textPropKeys = [
   "overflow",
   "whiteSpace",
   "textOverflow",
-];
+]);
 
 export const Text = styled.span<TextProps>`
   ${(props: any) =>
     Object.keys(props)
-      .filter((x) => textPropKeys.includes(x))
+      .filter((x) => textPropKeys.has(x))
       .map((key) => `${convertProp(key)}: ${props[key]};`)}
 `;

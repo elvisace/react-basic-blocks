@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import { Box, boxShadows } from ".";
 
 export default { title: "Box" };
 
-export const simple = () => (
+export const simple = (): JSX.Element => (
   <Box
     border="1px solid black"
     padding="10px"
@@ -12,7 +12,7 @@ export const simple = () => (
   />
 );
 
-export const withElevation = () => (
+export const withElevation = (): JSX.Element => (
   <Box
     boxShadow={boxShadows.light.medium}
     padding="10px"

@@ -1,6 +1,7 @@
-import React from 'react';
-import { addDecorator } from '@storybook/react';
-import { createGlobalStyle } from 'styled-components';
+import * as React from "react";
+import { Fragment } from "react";
+import { addDecorator } from "@storybook/react";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -9,9 +10,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-addDecorator(story => (
-  <>
+addDecorator((story) => (
+  <Fragment>
     <GlobalStyle />
     {story()}
-  </>
+  </Fragment>
 ));
